@@ -1,0 +1,35 @@
+<phpunit>
+	<php>
+
+		<!--  base URL (without trailing slash) -->
+		<var name="testing.maindomain" value="" />
+
+		<!-- add your selenium server url here -->
+		<!-- use: http://username:accesskey@ondemand.saucelabs.com:80/wd/hub for Sauce Labs -->
+		<var name="testing.selenium.seleniumServerUrl" value="" />
+
+		<!-- this is used to report test results back to Sauce Labs -->
+		<var name="testing.sauce.userId" value="" />
+		<var name="testing.sauce.accessKey" value="" />
+
+		<!-- specify the browser you want to use here -->
+		<var name="testing.selenium.capabilities" value='{}' />
+
+		<!-- Following settings will be processed on session init -->
+		<var name="testing.selenium.windowPosition" value="0,0" />
+		<var name="testing.selenium.windowSize" value="1280x1024" />
+		<var name="testing.selenium.windowFocus" value="1" />
+		<var name="testing.selenium.timeoutImplicitWait" value="5000" /><!-- time in ms -->
+
+		<!--
+			Available markers that will be replaced in the mail address:
+			###TESTID###
+			###TYPE###
+			###TIME###
+			###RANDOM###
+		-->
+		<var name="testing.newmailaddresspattern" value="test+_###TYPE###_###TESTID###@gmail.com" />
+
+	</php>
+</phpunit>
+
