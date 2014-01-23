@@ -30,6 +30,12 @@
 		-->
 		<var name="testing.newmailaddresspattern" value="test+_###TYPE###_###TESTID###@gmail.com" />
 
-	</php>
+
+        <var name="testing.frontend.user" value="" />
+        <var name="testing.frontend.password" value="" />
+
+        <!--existing product id in database-->
+        <var name="testing.product.id" value="" />
+    </php>
 </phpunit>
 
