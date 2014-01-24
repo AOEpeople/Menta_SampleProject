@@ -1,5 +1,8 @@
 <?php
 
+require_once dirname(__FILE__).'/../TestcaseAbstract.php';
+
+
 /*
  *  * Order mixed item test - simple + configuration
  */
