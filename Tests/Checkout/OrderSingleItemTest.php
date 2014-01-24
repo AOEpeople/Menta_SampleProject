@@ -31,7 +31,7 @@ class Tests_Checkout_OrderSingleItemTest extends MagentoComponents_Tests_Testcas
         /* @var $onePageCheckout MagentoComponents_Pages_OnePageCheckout */
         $onePageCheckout = Menta_ComponentManager::get('MagentoComponents_Pages_OnePageCheckout');
 
-        $onePageCheckout->goThrowCheckout();
+        $onePageCheckout->goThroughCheckout();
 
         $this->assertTextNotPresent("There was an error capturing the transaction.");
         $orderNumber = $onePageCheckout->getOrderNumberFromSuccessPage();
@@ -56,6 +56,15 @@ class Tests_Checkout_OrderSingleItemTest extends MagentoComponents_Tests_Testcas
         // check mail
         /* @var $imapMail GeneralComponents_ImapMail */
         $imapMail = Menta_ComponentManager::get('GeneralComponents_ImapMail');
-        $imapMail->checkOrderConfirmationMail($lastOrderNumber);
+
+        $this->getTest()->assertNotEmpty($lastOrderNumber);
+
+        $imapMail->getMailContent('Main Store: New Order # '. $lastOrderNumber);
+//        $idx = $this->waitForMailWhoseSubjectContains('Main Store: New Order # '. $lastOrderNumber);
+//
+//        $message = $this->getStorage()->getMessage($idx);
+//        $content = Zend_Mime_Decode::decodeQuotedPrintable($message->getContent());
+//        $this->getStorage()->removeMessage($idx);
+//        $this->getTest()->assertNotEmpty($content);
     }
 }
