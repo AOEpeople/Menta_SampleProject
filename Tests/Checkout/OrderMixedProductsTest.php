@@ -8,7 +8,7 @@ class Tests_Checkout_OrderMixedProductsTest extends MagentoComponents_Tests_Test
 {
 
     /**
-     * @return void
+     * @return int
      * @test
      */
     public function orderMixedProducts()
@@ -32,7 +32,7 @@ class Tests_Checkout_OrderMixedProductsTest extends MagentoComponents_Tests_Test
 
         $onePageCheckout = Menta_ComponentManager::get('MagentoComponents_Pages_OnePageCheckout');
         /* @var $onePageCheckout MagentoComponents_Pages_OnePageCheckout */
-        $onePageCheckout->goThrowCheckout();
+        $onePageCheckout->goThroughCheckout();
 
         $this->assertTextNotPresent("There was an error capturing the transaction.");
         $orderNumber = $onePageCheckout->getOrderNumberFromSuccessPage();
@@ -41,9 +41,10 @@ class Tests_Checkout_OrderMixedProductsTest extends MagentoComponents_Tests_Test
     }
 
     /**
-     * @return void
      * @test
      * @depends orderMixedProducts
+     * @return void
+     * @param int $lastOrderNumber
      */
     public function checkOrderInfo($lastOrderNumber)
     {

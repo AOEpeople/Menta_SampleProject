@@ -12,10 +12,10 @@ class Tests_Checkout_OrderSingleItemTest extends MagentoComponents_Tests_Testcas
      *
      * @test
      * @group adds_testdata
+     * @return int
      */
     public function orderItem()
     {
-
         /* @var $customerAccount MagentoComponents_Pages_CustomerAccount */
         $customerAccount = Menta_ComponentManager::get('MagentoComponents_Pages_CustomerAccount');
         $customerAccount->login();
@@ -45,6 +45,8 @@ class Tests_Checkout_OrderSingleItemTest extends MagentoComponents_Tests_Testcas
      *
      * @test
      * @depends orderItem
+     * @return void
+     * @param int $lastOrderNumber
      */
     public function checkOrderConfirmationMail($lastOrderNumber)
     {
@@ -60,11 +62,5 @@ class Tests_Checkout_OrderSingleItemTest extends MagentoComponents_Tests_Testcas
         $this->getTest()->assertNotEmpty($lastOrderNumber);
 
         $imapMail->getMailContent('Main Store: New Order # '. $lastOrderNumber);
-//        $idx = $this->waitForMailWhoseSubjectContains('Main Store: New Order # '. $lastOrderNumber);
-//
-//        $message = $this->getStorage()->getMessage($idx);
-//        $content = Zend_Mime_Decode::decodeQuotedPrintable($message->getContent());
-//        $this->getStorage()->removeMessage($idx);
-//        $this->getTest()->assertNotEmpty($content);
     }
 }
