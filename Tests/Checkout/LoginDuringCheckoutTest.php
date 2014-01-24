@@ -5,7 +5,7 @@ require_once dirname(__FILE__).'/../TestcaseAbstract.php';
  /*
   * Login during checkout test
   */
-class Tests_Checkout_LoginDuringCheckoutTest extends MagentoComponents_Tests_TestcaseAbstract {
+class Tests_Checkout_LoginDuringCheckoutTest extends TestcaseAbstract {
 
 	/**
 	 * Login during checkout

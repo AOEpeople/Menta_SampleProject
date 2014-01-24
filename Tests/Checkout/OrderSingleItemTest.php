@@ -5,7 +5,7 @@ require_once dirname(__FILE__).'/../TestcaseAbstract.php';
  * Order single item test
  *
  */
-class Tests_Checkout_OrderSingleItemTest extends MagentoComponents_Tests_TestcaseAbstract
+class Tests_Checkout_OrderSingleItemTest extends TestcaseAbstract
 {
 
     /**

@@ -5,7 +5,7 @@ require_once dirname(__FILE__).'/../TestcaseAbstract.php';
  * Order downloadable product
  *
  */
-class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends MagentoComponents_Tests_TestcaseAbstract
+class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends TestcaseAbstract
 {
 
     protected $lastOrderId;

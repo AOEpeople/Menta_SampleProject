@@ -7,7 +7,7 @@ require_once dirname(__FILE__).'/../TestcaseAbstract.php';
  *  * Order mixed item test - simple + configuration
  */
 
-class Tests_Checkout_OrderMixedProductsTest extends MagentoComponents_Tests_TestcaseAbstract
+class Tests_Checkout_OrderMixedProductsTest extends TestcaseAbstract
 {
 
     /**
