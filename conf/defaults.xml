@@ -2,7 +2,7 @@
 	<php>
 
 		<!--  base URL (without trailing slash) -->
-		<var name="testing.maindomain" value="" />
+		<var name="testing.maindomain" value="http://demo.magentocommerce.com/" />
 
 		<!-- add your selenium server url here -->
 		<!-- use: http://username:accesskey@ondemand.saucelabs.com:80/wd/hub for Sauce Labs -->
@@ -31,11 +31,31 @@
 		<var name="testing.newmailaddresspattern" value="test+_###TYPE###_###TESTID###@gmail.com" />
 
 
+        <!--existing user name and password in frontend -->
         <var name="testing.frontend.user" value="" />
         <var name="testing.frontend.password" value="" />
 
-        <!--existing product id in database-->
-        <var name="testing.product.id" value="" />
+        <!--
+            products oconfiguration
+            products ids use in test
+        -->
+        <!--simple existing product id in database-->
+        <var name="testing.simple.product.id" value="51" />
+        <!--existing configurable product id in database, with SIZE option -->
+        <var name="testing.configurable.product.id" value="119" />
+
+
+
+        <!--email testing configuration-->
+        <var name="testing.email.host" value="" />
+        <var name="testing.email.port" value="" />
+        <var name="testing.email.user" value="" />
+        <var name="testing.email.password" value="" />
+
+
+        <!--web service api info-->
+        <var name="testing.webserviceapi.user" value="api_user" />
+        <var name="testing.webserviceapi.password" value="test1234" />
     </php>
 </phpunit>
 
