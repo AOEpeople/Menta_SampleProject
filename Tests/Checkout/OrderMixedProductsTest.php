@@ -30,7 +30,7 @@ class Tests_Checkout_OrderMixedProductsTest extends TestcaseAbstract
         $productView->putProductsIntoCart($this->getConfiguration()->getValue('testing.simple.product.id'));
 
         $productView->openProduct($this->getConfiguration()->getValue('testing.configurable.product.id'));
-        $productView->selectSize(100, 525); // small
+        $productView->selectDropDownOption(100, 525); // small
         $productView->clickAddToCart();
 
         $onePageCheckout = Menta_ComponentManager::get('MagentoComponents_Pages_OnePageCheckout');

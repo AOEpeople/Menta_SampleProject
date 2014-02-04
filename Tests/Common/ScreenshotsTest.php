@@ -99,7 +99,7 @@ class Acceptance_Tests_Common_ScreenshotsTest extends TestcaseAbstract
         $this->takeScreenshot('Cart with 1 item - simple product');
 
         $productView->openProduct($this->getConfiguration()->getValue('testing.configurable.product.id'));
-        $productView->selectSize(100, 525); // small
+        $productView->selectDropDownOption(100, 525); // small
         $productView->clickAddToCart();
 
 
