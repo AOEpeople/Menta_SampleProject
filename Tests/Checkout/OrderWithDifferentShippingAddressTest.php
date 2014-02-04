@@ -33,7 +33,7 @@ class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends Te
         $onePageCheckout->setCheckoutMethod('register');
         $onePageCheckout->finishStep('checkoutMethod');
 
-        $onePageCheckout->addBillingAddress('uk');
+        $onePageCheckout->addAddress('uk', 'billing');
         $this->assertElementPresent('billing:customer_password');
         $onePageCheckout->saveAccountForLaterUse();
         $onePageCheckout->toggleShipToDifferentAddress();
@@ -44,7 +44,7 @@ class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends Te
 
         $onePageCheckout->finishStep('billingAddress');
 
-        $onePageCheckout->addShippingAddress('uk');
+        $onePageCheckout->addAddress('uk', 'shipping');
         $onePageCheckout->finishStep('shippingAddress');
 
         $onePageCheckout->finishStep('shippingMethod');
