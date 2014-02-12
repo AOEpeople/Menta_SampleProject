@@ -37,7 +37,7 @@ class Tests_Checkout_OrderMixedProductsTest extends TestcaseAbstract
         /* @var $onePageCheckout MagentoComponents_Pages_OnePageCheckout */
         $onePageCheckout->goThroughCheckout();
 
-        $this->assertTextNotPresent("There was an error capturing the transaction.");
+        $this->getHelperAssert()->assertTextNotPresent("There was an error capturing the transaction.");
         $orderNumber = $onePageCheckout->getOrderNumberFromSuccessPage();
 
         return $orderNumber;
