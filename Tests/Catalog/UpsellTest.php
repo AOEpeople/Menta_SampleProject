@@ -19,18 +19,18 @@ class Acceptance_Tests_Catalog_UpsellTest extends TestcaseAbstract
         /* @var $singleView MagentoComponents_Pages_ProductSingleView */
         $singleView = Menta_ComponentManager::get('MagentoComponents_Pages_ProductSingleView');
         $singleView->openProduct(126);
-        $this->assertTextPresent('The Only Children: Paisley T-Shirt');
+        $this->getHelperAssert()->assertTextPresent('The Only Children: Paisley T-Shirt');
 
-        $this->assertElementPresent('id=product-price-39-upsell');
-        $this->assertElementPresent('id=product-price-119-upsell');
-        $this->assertElementPresent('id=product-price-123-upsell');
+        $this->getHelperAssert()->assertElementPresent('id=product-price-39-upsell');
+        $this->getHelperAssert()->assertElementPresent('id=product-price-119-upsell');
+        $this->getHelperAssert()->assertElementPresent('id=product-price-123-upsell');
 
         // put one of the upsells into the cart
         $singleView->putProductsIntoCart(39);
 
         // after reloading the page the product should be  gone from upsells
         $singleView->openProduct(126);
-        $this->assertElementPresent('id=product-price-119-upsell');
-        $this->assertElementPresent('id=product-price-123-upsell');
+        $this->getHelperAssert()->assertElementPresent('id=product-price-119-upsell');
+        $this->getHelperAssert()->assertElementPresent('id=product-price-123-upsell');
     }
 }
