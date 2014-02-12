@@ -5,21 +5,21 @@ require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends TestcaseAbstract
 {
     public $singleProducts = array(
-        125 => array('price' => "$130.00", 'status' => 'inStock', 'size' => 98, 'sizePrice' => 10),
-        124 => array('price' => "$120.00", 'status' => 'inStock', 'size' => 99, 'sizePrice' => 20),
-        37 => array('price' => "$110.00", 'status' => 'inStock', 'size' => 100, 'sizePrice' => 30),
+        125 => array('price' => "US$130.00", 'status' => 'inStock', 'size' => 98, 'sizePrice' => 10),
+        124 => array('price' => "US$120.00", 'status' => 'inStock', 'size' => 99, 'sizePrice' => 20),
+        37 => array('price' => "US$110.00", 'status' => 'inStock', 'size' => 100, 'sizePrice' => 30),
     );
     public $sizeArray = array(
-        100 => array('price' => "10", 'label' => 'Small +$10.00'),
-        99 => array('price' => "20", 'label' => 'Medium +$20.00'),
-        98 => array('price' => "30", 'label' => 'Large +$30.00'),
+        100 => array('price' => "10", 'label' => 'Small +US$10.00'),
+        99 => array('price' => "20", 'label' => 'Medium +US$20.00'),
+        98 => array('price' => "30", 'label' => 'Large +US$30.00'),
     );
 
     public $selectedSizeLabelArray = array(
         '100' => array(
-            '100' => 'Small', '99' => 'Medium +$10.00', '98' => 'Large +$20.00'),
-            '99' => array('100' => 'Small -$10.00', '99' => 'Medium', '98' => 'Large +$10.00'),
-            '98' => array('100' => 'Small -$20.00', '99' => 'Medium -$10.00', '98' => 'Large'),
+            '100' => 'Small', '99' => 'Medium +US$10.00', '98' => 'Large +US$20.00'),
+            '99' => array('100' => 'Small -US$10.00', '99' => 'Medium', '98' => 'Large +US$10.00'),
+            '98' => array('100' => 'Small -US$20.00', '99' => 'Medium -US$10.00', '98' => 'Large'),
     );
 
     public function sizeOnlyDataProvider()
@@ -40,6 +40,7 @@ class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends Testcas
      */
     public function sizeOnlyTest($productId, $sizeAttrId, $singleProducts, $sizeArray, $selectedLabelArray)
     {
+//        $this->markTestSkipped();
         /* @var $productView MagentoComponents_Pages_ProductSingleView */
         $productView = Menta_ComponentManager::get('MagentoComponents_Pages_ProductSingleView');
 
@@ -47,9 +48,8 @@ class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends Testcas
         $this->getHelperWait()->waitForElementPresent("id=product_addtocart_form");
 
         // No options are selected
-        $productView->assertRegularPrice('$100.00');
+        $productView->assertRegularPrice('US$ 100.00');
         $productView->assertStatus('inStock');
-        $productView->assertQuantity(1);
 
         $productView->assertAddtoCartButton('inStock');
 
@@ -79,7 +79,6 @@ class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends Testcas
             // Product price and stock status after choosing size
             $productView->assertRegularPrice($product['price']);
             $productView->assertStatus($product['status']);
-            $productView->assertQuantity(1);
 
             $productView->assertAddToCartButton($product['status']);
         }
@@ -89,28 +88,28 @@ class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends Testcas
 
 
     public $nestTeeSingleProducts = array(
-        38 => array('price' => "$13.50", 'status' => 'inStock',
+        38 => array('price' => "US$13.50", 'status' => 'inStock',
             'size' => 100, 'sizeLabel' => 'Small', 'colorPrice' => '0', 'color' => 26), //small red
 
-        128 => array('price' => "$13.50", 'status' => 'inStock',
+        128 => array('price' => "US$13.50", 'status' => 'inStock',
             'size' => 99, 'sizeLabel' => 'Medium', 'colorPrice' => '0', 'color' => 26), //medium red
 
-        130 => array('price' => "$13.50", 'status' => 'inStock',
+        130 => array('price' => "US$13.50", 'status' => 'inStock',
             'size' => 98, 'sizeLabel' => 'Large', 'colorPrice' => '0', 'color' => 26), //large red
 
-        127 => array('price' => "$18.75", 'status' => 'inStock',
+        127 => array('price' => "US$18.75", 'status' => 'inStock',
             'size' => 100, 'sizeLabel' => 'Small', 'colorPrice' => '5.25', 'color' => 22), //small green
 
-        129 => array('price' => "$18.75", 'status' => 'inStock',
+        129 => array('price' => "US$18.75", 'status' => 'inStock',
             'size' => 99, 'sizeLabel' => 'Medium', 'colorPrice' => '5.25', 'color' => 22), //medium green
 
-        131 => array('price' => "$18.75", 'status' => 'inStock',
+        131 => array('price' => "US$18.75", 'status' => 'inStock',
             'size' => 98, 'sizeLabel' => 'Large', 'colorPrice' => '5.25', 'color' => 22), //large green
     );
 
     public $nestTeeColorArray = array(
-        22 => array('price' => "$18.75", 'status' => 'inStock'), //green
-        26 => array('price' => "$13.50", 'status' => 'inStock'), //red
+        22 => array('price' => "US$18.75", 'status' => 'inStock'), //green
+        26 => array('price' => "US$13.50", 'status' => 'inStock'), //red
     );
 
     public function sizeAndColorDataProvider()
@@ -139,7 +138,6 @@ class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends Testcas
         $productView->openProduct($productId);
         $this->getHelperWait()->waitForElementPresent("id=product_addtocart_form");
 
-        $productView->assertQuantity(1);
         $productView->assertAddtoCartButton('inStock');
 
         foreach ($singleProducts as $key => $product) {
@@ -159,7 +157,6 @@ class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends Testcas
             // Product price and stock status after choosing size
             $productView->assertRegularPrice($product['price']);
             $productView->assertStatus($product['status']);
-            $productView->assertQuantity(1);
 
             $productView->assertAddtoCartButton($product['status']);
         }
