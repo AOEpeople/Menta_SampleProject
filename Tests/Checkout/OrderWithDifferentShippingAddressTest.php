@@ -34,7 +34,7 @@ class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends Te
         $onePageCheckout->finishStep('checkoutMethod');
 
         $onePageCheckout->addAddress('uk', 'billing');
-        $this->assertElementPresent('billing:customer_password');
+        $this->getHelperAssert()->assertElementPresent('billing:customer_password');
         $onePageCheckout->saveAccountForLaterUse();
         $onePageCheckout->toggleShipToDifferentAddress();
 
@@ -57,35 +57,36 @@ class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends Te
         $this->lastOrderId = $onePageCheckout->getOrderIdFromSuccessPage();
         $lastOrderNumber = $onePageCheckout->getOrderNumberFromSuccessPage();
 
-        $this->open('/sales/order/history/');
+        $this->getHelperCommon()->open('/sales/order/history/?limit=50');
 
         $viewOrderLinkPath = '//*[@id="my-orders-table"]/tbody/tr/td/span/a[contains(@href, "view/order_id/'. $this->lastOrderId .'")]';
 
-        $this->clickAndWait($viewOrderLinkPath);
+        $this->getHelperCommon()->click($viewOrderLinkPath);
+        $this->getHelperWait()->waitForElementPresent('//h1[ ' . Menta_Util_Div::containsText("Order #$lastOrderNumber") . ']');
 
-        $this->assertTextPresent($this->lastOrderId);
+        $this->getHelperAssert()->assertTextPresent($this->lastOrderId);
 
         $addressProvider = new MagentoComponents_Provider_Address();
         $shippingAddress = $addressProvider->getAddressField('shipping', 'uk');
         $billingAddress = $addressProvider->getAddressField('billing', 'uk');
 
-        $this->assertTextPresent($shippingAddress['firstname']);
-        $this->assertTextPresent($shippingAddress['lastname']);
-        $this->assertTextPresent($shippingAddress['street1']);
+        $this->getHelperAssert()->assertTextPresent($shippingAddress['firstname']);
+        $this->getHelperAssert()->assertTextPresent($shippingAddress['lastname']);
+        $this->getHelperAssert()->assertTextPresent($shippingAddress['street1']);
         if (isset($shippingAddress['region']) && $shippingAddress['region']) {
-            $this->assertTextPresent($shippingAddress['region']);
+            $this->getHelperAssert()->assertTextPresent($shippingAddress['region']);
         }
-        $this->assertTextPresent($shippingAddress['country']);
-        $this->assertTextPresent($shippingAddress['phone']);
+        $this->getHelperAssert()->assertTextPresent($shippingAddress['country']);
+        $this->getHelperAssert()->assertTextPresent($shippingAddress['phone']);
 
-        $this->assertTextPresent($billingAddress['firstname']);
-        $this->assertTextPresent($billingAddress['lastname']);
-        $this->assertTextPresent($billingAddress['street1']);
+        $this->getHelperAssert()->assertTextPresent($billingAddress['firstname']);
+        $this->getHelperAssert()->assertTextPresent($billingAddress['lastname']);
+        $this->getHelperAssert()->assertTextPresent($billingAddress['street1']);
         if (isset($billingAddress['region']) && $billingAddress['region']) {
-            $this->assertTextPresent($billingAddress['region']);
+            $this->getHelperAssert()->assertTextPresent($billingAddress['region']);
         }
-        $this->assertTextPresent($billingAddress['country']);
-        $this->assertTextPresent($billingAddress['phone']);
+        $this->getHelperAssert()->assertTextPresent($billingAddress['country']);
+        $this->getHelperAssert()->assertTextPresent($billingAddress['phone']);
 
         return $lastOrderNumber;
     }
