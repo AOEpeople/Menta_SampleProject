@@ -34,7 +34,7 @@ class Tests_Checkout_OrderSingleItemTest extends TestcaseAbstract
 
         $onePageCheckout->goThroughCheckout();
 
-        $this->assertTextNotPresent("There was an error capturing the transaction.");
+        $this->getHelperAssert()->assertTextNotPresent("There was an error capturing the transaction.");
         $orderNumber = $onePageCheckout->getOrderNumberFromSuccessPage();
 
         return $orderNumber;
@@ -60,7 +60,7 @@ class Tests_Checkout_OrderSingleItemTest extends TestcaseAbstract
         /* @var $imapMail GeneralComponents_ImapMail */
         $imapMail = Menta_ComponentManager::get('GeneralComponents_ImapMail');
 
-        $this->getTest()->assertNotEmpty($lastOrderNumber);
+        $this->assertNotEmpty($lastOrderNumber);
 
         $imapMail->getMailContent('Main Store: New Order # '. $lastOrderNumber);
     }
