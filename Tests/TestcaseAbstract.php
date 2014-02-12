@@ -1,16 +1,12 @@
 <?php
 
-
-
-require_once dirname(__FILE__).'/bootstrap.php';
 require_once dirname(__FILE__).'/bootstrap.php';
 
 /**
  * Abstract base class for Magento Tests
  *
- * @author Fabrizio Branca <fabrizio.branca@aoemedia.de>
  */
-abstract class TestcaseAbstract extends Menta_PHPUnit_Testcase_Selenium1 {
+abstract class TestcaseAbstract extends Menta_PHPUnit_Testcase_Selenium2 {
 
 	protected $cleanupPreviousSession = false; // not needed if we have a new session anyway
 	protected $freshSessionForEachTestMethod = true;
@@ -29,7 +25,10 @@ abstract class TestcaseAbstract extends Menta_PHPUnit_Testcase_Selenium1 {
 		parent::setUp();
 
 		$mainDomain = Menta_ConfigurationPhpUnitVars::getInstance()->getValue('testing.maindomain');
-		$this->setBrowserUrl($mainDomain . $this->urlPrefix);
+
+        $this->getHelperCommon()->setMainDomain($mainDomain . $this->urlPrefix);
+
+//		$this->setBrowserUrl($mainDomain . $this->urlPrefix);
 
 		if (Menta_SessionManager::activeSessionExists()) {
 			// clear cart
