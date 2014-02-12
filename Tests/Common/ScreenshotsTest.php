@@ -17,7 +17,7 @@ class Acceptance_Tests_Common_ScreenshotsTest extends TestcaseAbstract
      */
     public function homePage()
     {
-        $this->open('/');
+        $this->getHelperCommon()->open('/');
         $this->takeScreenshot('Home page');
     }
 
@@ -30,7 +30,7 @@ class Acceptance_Tests_Common_ScreenshotsTest extends TestcaseAbstract
     {
         /* @var $categoryView MagentoComponents_Pages_CategoryView */
         $categoryView = Menta_ComponentManager::get('MagentoComponents_Pages_CategoryView');
-        $categoryView->open(10);
+        $this->getHelperCommon()->open(10);
         $this->takeScreenshot('Category view', 'Category view of a sample test category');
     }
 
