@@ -2,7 +2,7 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
-class Acceptance_Tests_Catalog_UpsellTest extends TestcaseAbstract
+class Tests_Catalog_UpsellTest extends TestcaseAbstract
 {
     /**
      * Check upsell products present on product view page
