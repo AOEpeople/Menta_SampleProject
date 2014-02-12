@@ -25,7 +25,7 @@ class Tests_Checkout_LoginDuringCheckoutTest extends TestcaseAbstract {
 
         //insert wrong credentials
         $checkout->signInWithExistingAccount('foo@bar.com','test123');
-		$this->waitForTextPresent('Invalid login or password.');
+		$this->getHelperWait()->waitForTextPresent('Invalid login or password.');
 
 		// insert correct username
         $checkout->signInWithExistingAccount($this->getConfiguration()->getValue('testing.frontend.user'),$this->getConfiguration()->getValue('testing.frontend.password'));
@@ -36,8 +36,7 @@ class Tests_Checkout_LoginDuringCheckoutTest extends TestcaseAbstract {
 		$customer = Menta_ComponentManager::get('MagentoComponents_Pages_CustomerAccount');
 		$customer->openDashboard();
 
-		$this->waitForTextPresent($this->getConfiguration()->getValue('testing.frontend.user'));
-
+		$this->getHelperWait()->waitForTextPresent($this->getConfiguration()->getValue('testing.frontend.user'));
 	}
 
 }
