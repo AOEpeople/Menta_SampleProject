@@ -28,7 +28,8 @@
 			###TIME###
 			###RANDOM###
 		-->
-		<var name="testing.newmailaddresspattern" value="test+_###TYPE###_###TESTID###@gmail.com" />
+		<!--<var name="testing.newmailaddresspattern" value="test+_###TYPE###_###TESTID###@gmail.com" />-->
+        <var name="testing.newmailaddresspattern" value="test+_###TYPE###_###RANDOM###@gmail.com"/>
 
 
         <!--existing user name and password in frontend -->
