@@ -41,11 +41,11 @@
             "package": {
                 "name": "aoemedia/menta",
                 "type": "project",
-                "version": "dev-master",
+                "version": "dev-develop",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/macopedia/Menta.git",
-                    "reference": "4f30706e7726dc0de4567d69d9c029f5d8791657"
+                    "reference": "dc3405818ac66e4f8c38df04a580ed94068f5853"
                 },
                 "autoload": {
                     "psr-0": {
@@ -64,7 +64,7 @@
         "ext-gd": "*",
         "aoemedia/menta_magentocomponents": "dev-master",
         "aoemedia/menta_generalcomponents": "dev-master",
-        "aoemedia/menta": "dev-master"
+        "aoemedia/menta": "dev-develop"
 
     },
 

@@ -28,8 +28,6 @@ abstract class TestcaseAbstract extends Menta_PHPUnit_Testcase_Selenium2 {
 
         $this->getHelperCommon()->setMainDomain($mainDomain . $this->urlPrefix);
 
-//		$this->setBrowserUrl($mainDomain . $this->urlPrefix);
-
 		if (Menta_SessionManager::activeSessionExists()) {
 			// clear cart
 			$cart = Menta_ComponentManager::get('MagentoComponents_Pages_Cart'); /* @var $cart MagentoComponents_Pages_Cart */
