@@ -7,6 +7,7 @@ class Tests_Account_UsernameTest extends TestcaseAbstract
 
     /**
      * Check link in header
+     *
      * @test
      */
     public function loginWhenNotLoggedIn()
@@ -21,6 +22,7 @@ class Tests_Account_UsernameTest extends TestcaseAbstract
 
     /**
      * Check user name when logged in
+     * 
      * @test
      */
     public function userNameWhenLoggedIn()
