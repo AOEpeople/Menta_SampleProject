@@ -1,62 +1,63 @@
 <phpunit>
-	<php>
+    <php>
+        <!--  Base URL (without trailing slash) -->
+        <var name="testing.maindomain" value="http://demo.magentocommerce.com"/>
 
-		<!--  base URL (without trailing slash) -->
-		<var name="testing.maindomain" value="http://demo.magentocommerce.com/" />
+        <!-- Add your selenium server url here -->
+        <!-- use: http://username:accesskey@ondemand.saucelabs.com:80/wd/hub for Sauce Labs -->
+        <var name="testing.selenium.seleniumServerUrl" value=""/>
 
-		<!-- add your selenium server url here -->
-		<!-- use: http://username:accesskey@ondemand.saucelabs.com:80/wd/hub for Sauce Labs -->
-		<var name="testing.selenium.seleniumServerUrl" value="" />
+        <!-- This is used to report test results back to Sauce Labs -->
+        <var name="testing.sauce.userId" value=""/>
+        <var name="testing.sauce.accessKey" value=""/>
 
-		<!-- this is used to report test results back to Sauce Labs -->
-		<var name="testing.sauce.userId" value="" />
-		<var name="testing.sauce.accessKey" value="" />
+        <!-- Specify the browser you want to use here -->
+        <var name="testing.selenium.capabilities" value='{}'/>
 
-		<!-- specify the browser you want to use here -->
-		<var name="testing.selenium.capabilities" value='{}' />
+        <!-- Following settings will be processed on session init -->
+        <var name="testing.selenium.windowPosition" value="0,0"/>
+        <var name="testing.selenium.windowSize" value="1280x1024"/>
+        <var name="testing.selenium.windowFocus" value="1"/>
+        <!-- time in ms -->
+        <var name="testing.selenium.timeoutImplicitWait" value="5000"/>
 
-		<!-- Following settings will be processed on session init -->
-		<var name="testing.selenium.windowPosition" value="0,0" />
-		<var name="testing.selenium.windowSize" value="1280x1024" />
-		<var name="testing.selenium.windowFocus" value="1" />
-		<var name="testing.selenium.timeoutImplicitWait" value="5000" /><!-- time in ms -->
-
-		<!--
-			Available markers that will be replaced in the mail address:
-			###TESTID###
-			###TYPE###
-			###TIME###
-			###RANDOM###
-		-->
-		<!--<var name="testing.newmailaddresspattern" value="test+_###TYPE###_###TESTID###@gmail.com" />-->
-        <var name="testing.newmailaddresspattern" value="test+_###TYPE###_###RANDOM###@gmail.com"/>
-
-
-        <!--existing user name and password in frontend -->
-        <var name="testing.frontend.user" value="" />
-        <var name="testing.frontend.password" value="" />
+        <!-- Admin url - default /admin -->
+        <var name="testing.magento.admin.url" value="admin" />
+        <!-- Admin user name and password -->
+        <var name="testing.magento.admin.user" value="" />
+        <var name="testing.magento.admin.password" value="" />
 
         <!--
-            products oconfiguration
+            Available markers that will be replaced in the mail address:
+            ###TESTID###
+            ###TYPE###
+            ###TIME###
+            ###RANDOM###
+        -->
+        <var name="testing.newmailaddresspattern" value="test+_###TYPE###_###RANDOM###@gmail.com"/>
+
+        <!-- Existing user name and password in frontend -->
+        <var name="testing.frontend.user" value=""/>
+        <var name="testing.frontend.password" value=""/>
+
+        <!--
+            Products configuration
             products ids use in test
         -->
-        <!--simple existing product id in database-->
-        <var name="testing.simple.product.id" value="51" />
-        <!--existing configurable product id in database, with SIZE option -->
-        <var name="testing.configurable.product.id" value="119" />
-
-
+        <!-- simple existing product id in database -->
+        <var name="testing.simple.product.id" value="51"/>
+        <!-- existing configurable product id in database, with SIZE option -->
+        <var name="testing.configurable.product.id" value="119"/>
 
         <!--email testing configuration-->
-        <var name="testing.email.host" value="" />
-        <var name="testing.email.port" value="" />
-        <var name="testing.email.user" value="" />
-        <var name="testing.email.password" value="" />
-
+        <var name="testing.email.host" value=""/>
+        <var name="testing.email.port" value=""/>
+        <var name="testing.email.user" value=""/>
+        <var name="testing.email.password" value=""/>
 
         <!--web service api info-->
-        <var name="testing.webserviceapi.user" value="api_user" />
-        <var name="testing.webserviceapi.password" value="test1234" />
+        <var name="testing.webserviceapi.user" value="api_user"/>
+        <var name="testing.webserviceapi.password" value="test1234"/>
     </php>
 </phpunit>
 
