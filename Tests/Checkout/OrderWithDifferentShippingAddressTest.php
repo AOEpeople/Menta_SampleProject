@@ -2,8 +2,7 @@
 require_once dirname(__FILE__).'/../TestcaseAbstract.php';
 
 /**
- * Order downloadable product
- *
+ * Order with different shipping addresss test
  */
 class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends TestcaseAbstract
 {
@@ -11,7 +10,7 @@ class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends Te
     protected $lastOrderId;
 
     /**
-     * Order downloadable product
+     * Order simple product with different shipping address
      *
      * @test
      * @group adds_testdata
@@ -92,6 +91,8 @@ class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends Te
     }
 
     /**
+     * Check shipping address in order
+     *
      * @param int $lastOrderNumber
      * @return void
      * @test
@@ -114,12 +115,5 @@ class Acceptance_Tests_Checkout_OrderWithDifferentShippingAddressTest extends Te
 
         $this->assertEquals('BillingFirstname', $order['billing_address']['firstname']);
         $this->assertEquals('BillingLastname', $order['billing_address']['lastname']);
-
     }
-
-
-    /*
-     *
-     * TODO test validateCheckoutTaxesWithDifferentBillingAndShipping
-     */
 }

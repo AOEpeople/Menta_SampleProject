@@ -2,6 +2,9 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
+/**
+ * Configurable product tests
+ */
 class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends TestcaseAbstract
 {
     public $singleProducts = array(
@@ -40,7 +43,6 @@ class Acceptance_Tests_Catalog_ConfigurableProductSingleViewTest extends Testcas
      */
     public function sizeOnlyTest($productId, $sizeAttrId, $singleProducts, $sizeArray, $selectedLabelArray)
     {
-//        $this->markTestSkipped();
         /* @var $productView MagentoComponents_Pages_ProductSingleView */
         $productView = Menta_ComponentManager::get('MagentoComponents_Pages_ProductSingleView');
 

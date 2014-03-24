@@ -2,6 +2,9 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
+/**
+ * Registration tests
+ */
 class Tests_Account_RegisterTest extends TestcaseAbstract
 {
     /**

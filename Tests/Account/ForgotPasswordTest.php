@@ -2,6 +2,9 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
+/**
+ * Forgot,reset password tests
+ */
 class Tests_Account_ForgotPasswordTest extends TestcaseAbstract
 {
 

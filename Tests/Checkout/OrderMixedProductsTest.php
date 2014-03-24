@@ -2,11 +2,9 @@
 
 require_once dirname(__FILE__).'/../TestcaseAbstract.php';
 
-
-/*
- *  * Order mixed item test - simple + configuration
+/**
+ * Order mixed item test - simple + configuration
  */
-
 class Tests_Checkout_OrderMixedProductsTest extends TestcaseAbstract
 {
 

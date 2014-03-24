@@ -2,6 +2,9 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
+/**
+ * Tax calculation test
+ */
 class Tests_Checkout_TaxCalculationTest extends TestcaseAbstract
 {
     public function productsProvider()
@@ -29,6 +32,8 @@ class Tests_Checkout_TaxCalculationTest extends TestcaseAbstract
     }
 
     /**
+     * Check tax calculation in checkout
+     *
      * @test
      * @param $country
      * @param $grossSubtotal
@@ -80,11 +85,11 @@ class Tests_Checkout_TaxCalculationTest extends TestcaseAbstract
         $onePageCheckout->waitForReview();
 
         $this->checkCheckoutPrices($onePageCheckout, $products, $grossSubtotal, $grossShipping, $grandTotal, $tax);
-
     }
 
     /**
      * Check products price in category page
+     *
      * @param $categoryView MagentoComponents_Pages_CategoryView
      * @param $products
      */
@@ -122,7 +127,7 @@ class Tests_Checkout_TaxCalculationTest extends TestcaseAbstract
     }
 
     /**
-     * Check checkout price in summary
+     * Check checkout prices in summary
      *
      * @param $checkout MagentoComponents_Pages_OnePageCheckout
      * @param $products

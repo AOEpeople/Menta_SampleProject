@@ -2,6 +2,9 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
+/**
+ * Upsell products tests
+ */
 class Tests_Catalog_UpsellTest extends TestcaseAbstract
 {
     /**

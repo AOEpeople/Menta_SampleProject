@@ -2,6 +2,9 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
+/**
+ * User dashboard tests
+ */
 class Tests_Account_DashboardTest extends TestcaseAbstract
 {
 

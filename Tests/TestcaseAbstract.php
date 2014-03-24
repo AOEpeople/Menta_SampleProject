@@ -105,5 +105,4 @@ abstract class TestcaseAbstract extends Menta_PHPUnit_Testcase_Selenium2
     {
         return Menta_ComponentManager::get('Menta_Component_Helper_Wait');
     }
-
 }

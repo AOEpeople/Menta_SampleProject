@@ -3,7 +3,6 @@ require_once dirname(__FILE__).'/../TestcaseAbstract.php';
 
 /**
  * Order single item test
- *
  */
 class Tests_Checkout_OrderSingleItemTest extends TestcaseAbstract
 {
@@ -38,11 +37,10 @@ class Tests_Checkout_OrderSingleItemTest extends TestcaseAbstract
         $orderNumber = $onePageCheckout->getOrderNumberFromSuccessPage();
 
         return $orderNumber;
-
     }
 
     /**
-     * Check for order confirmation mail
+     * Check order confirmation mail
      *
      * @test
      * @depends orderItem
@@ -56,7 +54,6 @@ class Tests_Checkout_OrderSingleItemTest extends TestcaseAbstract
             $this->markTestSkipped('No orderId from previous test found!');
         }
 
-        // check mail
         /* @var $imapMail GeneralComponents_ImapMail */
         $imapMail = Menta_ComponentManager::get('GeneralComponents_ImapMail');
 

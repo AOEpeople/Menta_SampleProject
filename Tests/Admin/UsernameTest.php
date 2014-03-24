@@ -2,6 +2,9 @@
 
 require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 
+/**
+ * Admin username tests
+ */
 class Tests_Admin_UsernameTest extends TestcaseAbstract
 {
     /**

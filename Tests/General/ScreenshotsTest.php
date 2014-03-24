@@ -5,8 +5,7 @@ require_once dirname(__FILE__) . '/../TestcaseAbstract.php';
 /**
  * Create screenshots for different views
  */
-
-class Acceptance_Tests_Common_ScreenshotsTest extends TestcaseAbstract
+class Acceptance_Tests_General_ScreenshotsTest extends TestcaseAbstract
 {
 
     /**
@@ -23,6 +22,7 @@ class Acceptance_Tests_Common_ScreenshotsTest extends TestcaseAbstract
 
     /**
      * Category view screenshot
+     *
      * @test
      * @return void
      */
