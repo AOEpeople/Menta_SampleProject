@@ -120,7 +120,5 @@ class Tests_Account_ForgotPasswordTest extends TestcaseAbstract
 
         // try to login
         $customerAccount->login();
-
     }
-
 }
