@@ -7,6 +7,7 @@ class Tests_Account_ForgotPasswordTest extends TestcaseAbstract
 
     /**
      * Get password reset link
+     *
      * @test
      * @return array
      * @group adds_testdata
@@ -46,6 +47,7 @@ class Tests_Account_ForgotPasswordTest extends TestcaseAbstract
 
     /**
      * Check Reset Password Mail
+     * 
      * @param array $userAccount
      * @return string
      * @test
