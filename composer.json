@@ -9,7 +9,7 @@
                 "source": {
                     "type": "git",
                     "url": "git@git.macopedia.pl:magento-modules/menta_magentocomponents.git",
-                    "reference": "9a8118084f39db2c34af2727ec84d1f0dff9efc8"
+                    "reference": "d0c6d4f5f8ba3def25a9ac1c73a38142d7467294"
                 },
                 "autoload": {
                     "psr-0": {
@@ -27,7 +27,7 @@
                 "source": {
                     "type": "git",
                     "url": "git@git.macopedia.pl:magento-modules/menta_generalcomponents.git",
-                    "reference": "b70cddbbd821511f9e4a7bb2bac4b94ea5e6b31b"
+                    "reference": "f03cc110c80cb2079f9cc53f1402bc20f95670e4"
                 },
                 "autoload": {
                     "psr-0": {
@@ -45,7 +45,7 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/macopedia/Menta.git",
-                    "reference": "dc3405818ac66e4f8c38df04a580ed94068f5853"
+                    "reference": "f8c0ca003b662da30a21258658e65da6d95bf478"
                 },
                 "autoload": {
                     "psr-0": {
