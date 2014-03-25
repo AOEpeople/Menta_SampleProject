@@ -2,7 +2,8 @@
 
 All test should works in demo magento 1.8 with sample data
 ## Getting started
-    # Install magento 1.8 with sample data. Default currency "$US"
+    # Install magento 1.8 with sample data. Default currency "US$"
+    http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/installing_magento_via_shell_ssh
     # Create admin, frontend and soap user.
     # Change settings in conf/defaults.xml or create a new configuration file
 
