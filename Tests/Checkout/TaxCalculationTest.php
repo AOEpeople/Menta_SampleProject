@@ -10,10 +10,10 @@ class Tests_Checkout_TaxCalculationTest extends TestcaseAbstract
     public function productsProvider()
     {
         return array(
-            array('id' => 44, 'price' => '$550.00'),
-            array('id' => 132, 'price' => '$99.00'),
-            array('id' => 133, 'price' => '$34.00'),
-            array('id' => 134, 'price' => '$19.00'),
+            array('id' => 44, 'price' => 'US$550.00'),
+            array('id' => 132, 'price' => 'US$99.00'),
+            array('id' => 133, 'price' => 'US$34.00'),
+            array('id' => 134, 'price' => 'US$19.00'),
         );
     }
 
@@ -21,13 +21,13 @@ class Tests_Checkout_TaxCalculationTest extends TestcaseAbstract
     {
         return array(
             //country,	gross subtotal, gross shipping,	grand total
-            'US' => array('us', "$702.00", "$20.00", "$722.00", null),
-            'Finland' => array('fi', "$702.00", "$20.00", "$722.00", null),
-            'Germany' => array('de', "$702.00", "$20.00", "$722.00", null),
-            'Estonia' => array('es', "$702.00", "$20.00", "$722.00", null),
-            'Egypt' => array('eg', "$702.00", "$20.00", "$722.00", null),
-            'Italy' => array('it', "$702.00", "$20.00", "$722.00", null),
-            'US California' => array('us_california', "$702.00", "$20.00", "$779.92", "$57.92")
+            'US' => array('us', "US$702.00", "US$20.00", "US$722.00", null),
+            'Finland' => array('fi', "US$702.00", "US$20.00", "US$722.00", null),
+            'Germany' => array('de', "US$702.00", "US$20.00", "US$722.00", null),
+            'Estonia' => array('es', "US$702.00", "US$20.00", "US$722.00", null),
+            'Egypt' => array('eg', "US$702.00", "US$20.00", "US$722.00", null),
+            'Italy' => array('it', "US$702.00", "US$20.00", "US$722.00", null),
+            'US California' => array('us_california', "US$702.00", "US$20.00", "US$779.92", "US$57.92")
         );
     }
 
