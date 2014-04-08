@@ -5,6 +5,8 @@
     <php>
         <var name="testing.selenium.seleniumServerUrl" value="http://vmhost:4444/wd/hub" />
         <var name="testing.selenium.browser" value="firefox" />
+
+        <var name="report.previous" value="../build/reports.prev" />
     </php>
 
     <listeners>
