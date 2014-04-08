@@ -46,7 +46,7 @@ class Acceptance_Tests_General_ScreenshotsTest extends TestcaseAbstract
         $singleView = Menta_ComponentManager::get('MagentoComponents_Pages_ProductSingleView');
         /* @var $singleView MagentoComponents_Pages_ProductSingleView */
         $singleView->openProduct(51);
-        $this->takeScreenshot('Product view');
+        $this->takeScreenshot('Product view', NULL, NULL, NULL, 'Product View');
     }
 
     /**
