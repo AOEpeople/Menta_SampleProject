@@ -1,7 +1,7 @@
 <phpunit>
     <php>
         <!--  Base URL (without trailing slash) -->
-        <var name="testing.maindomain" value="http://demo.magentocommerce.com"/>
+        <var name="testing.maindomain" value="http://www.screenshot.local"/>
 
         <!-- Add your selenium server url here -->
         <!-- use: http://username:accesskey@ondemand.saucelabs.com:80/wd/hub for Sauce Labs -->
@@ -58,6 +58,12 @@
         <!--web service api info-->
         <var name="testing.webserviceapi.user" value="api_user"/>
         <var name="testing.webserviceapi.password" value="test1234"/>
+
+        <!-- Defines commands for pdiff and image processing -->
+        <var name="report.pdiff_command" value="/usr/bin/gm composite -compose difference %1$s %2$s %3$s ; /usr/bin/gm convert -white-threshold 1 %3$s %3$s" />
+        <var name="screenshot.command_crop" value="/usr/bin/gm convert -crop %1$sx%2$s+%3$s+%4$s %5$s %5$s" />
+        <var name="screenshot.command_rectangle" value="/usr/bin/gm convert -stroke %5$s -fill %6$s -draw 'rectangle %1$s,%2$s %3$s,%4$s' %7$s %7$s" />
+
     </php>
 </phpunit>
 
