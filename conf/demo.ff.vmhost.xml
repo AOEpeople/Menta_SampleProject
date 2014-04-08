@@ -1,0 +1,22 @@
+<phpunit
+        printerClass="Menta_PHPUnit_Listener_VerboseResultPrinter"
+        printerFile="../vendor/aoepeople/menta/lib/Menta/PHPUnit/Listener/VerboseResultPrinter.php">
+
+    <php>
+        <var name="testing.selenium.seleniumServerUrl" value="http://vmhost:4444/wd/hub" />
+        <var name="testing.selenium.browser" value="firefox" />
+    </php>
+
+    <listeners>
+        <listener
+                class="Menta_PHPUnit_Listener_HtmlResultPrinter"
+                file="../vendor/aoepeople/menta/lib/Menta/PHPUnit/Listener/HtmlResultPrinter.php">
+            
+            <arguments>
+                <string>../build/reports/index.html</string>
+            </arguments>
+        </listener>
+    </listeners>
+
+</phpunit>
+
