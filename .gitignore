@@ -1,5 +1,4 @@
 vendor/
 bin/
-build/
-build.prev/
 composer.lock
+build/reports/*
