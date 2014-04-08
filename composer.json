@@ -1,74 +1,12 @@
 {
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "aoemedia/menta_magentocomponents",
-                "type": "project",
-                "version": "dev-master",
-                "source": {
-                    "type": "git",
-                    "url": "git@git.macopedia.pl:magento-modules/menta_magentocomponents.git",
-                    "reference": "d0c6d4f5f8ba3def25a9ac1c73a38142d7467294"
-                },
-                "autoload": {
-                    "psr-0": {
-                        "MagentoComponents": "lib/"
-                    }
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "aoemedia/menta_generalcomponents",
-                "type": "project",
-                "version": "dev-master",
-                "source": {
-                    "type": "git",
-                    "url": "git@git.macopedia.pl:magento-modules/menta_generalcomponents.git",
-                    "reference": "f03cc110c80cb2079f9cc53f1402bc20f95670e4"
-                },
-                "autoload": {
-                    "psr-0": {
-                        "GeneralComponents": "lib/"
-                    }
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "aoemedia/menta",
-                "type": "project",
-                "version": "dev-develop",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/macopedia/Menta.git",
-                    "reference": "f8c0ca003b662da30a21258658e65da6d95bf478"
-                },
-                "autoload": {
-                    "psr-0": {
-                        "Menta": "lib/"
-                    }
-                }
-            }
-        }
-    ],
-
     "minimum-stability": "dev",
     "require": {
-        "phpunit/phpunit": "3.7.*",
-        "instaclick/php-webdriver": "dev-master",
-        "ext-curl": "*",
-        "ext-gd": "*",
-        "aoemedia/menta_magentocomponents": "dev-master",
-        "aoemedia/menta_generalcomponents": "dev-master",
-        "aoemedia/menta": "dev-develop"
-
+        "aoepeople/menta": "*",
+        "aoepeople/menta_magentocomponents": "*",
+        "aoepeople/menta_generalcomponents": "*"
     },
-
     "config": {
         "bin-dir": "bin"
     }
+}
 }
