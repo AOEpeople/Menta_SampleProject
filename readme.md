@@ -7,17 +7,14 @@ All test should work in demo magento 1.8 with sample data
     # Create admin, frontend (firstname Test, lastname User) and soap user.
     # Change settings in conf/defaults.xml or create a new configuration file
 
-
-    git clone git://github.com/AOEmedia/Menta_SampleProject.git Menta_SampleProject
+    git clone git://github.com/AOEpeople/Menta_SampleProject.git Menta_SampleProject
     cd Menta_SampleProject
     ./composer.phar install
 
-    # Creating directory for HTML reports
-    cd Tests
-    mkdir -p ../build/reports
-
     # download and run selenium server
-    java -jar selenium-server-standalone-2.39.0.jar
+    java -jar selenium-server-standalone-2.42.2.jar
+
+    cd Tests
 
     # run single test
     ../bin/phpunit --configuration=../conf/defaults.xml General/ScreenshotsTest.php
