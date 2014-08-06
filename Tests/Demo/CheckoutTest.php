@@ -88,21 +88,45 @@ class Tests_Demo_CheckoutTest extends TestcaseAbstract
      * @depends cart
      */
     public function checkout() {
+        $checkout = Menta_ComponentManager::get('MagentoComponents_Pages_OnePageCheckout'); /* @var $checkout MagentoComponents_Pages_OnePageCheckout */
+
         $this->getHelperAssert()->assertElementContainsText('css=.page-title h1', 'CHECKOUT');
         $this->takeScreenshot('Checkout - Login or Register');
 
-        $checkout = Menta_ComponentManager::get('MagentoComponents_Pages_OnePageCheckout'); /* @var $checkout MagentoComponents_Pages_OnePageCheckout */
-
         $checkout->setCheckoutMethod('guest');
+        $this->takeScreenshot('Checkout - Login or Register (before submit)');
         $checkout->finishStep('checkoutMethod');
+        $this->takeScreenshot('Checkout - Login or Register (while submit)');
 
+        $checkout->waitForBillingAddress();
         $this->takeScreenshot('Checkout - Billing Information');
 
         $checkout->addAddress('us', 'billing');
+        $this->takeScreenshot('Checkout - Billing Information (before submit)');
         $checkout->finishStep('billingAddress');
+        $this->takeScreenshot('Checkout - Billing Information (while submit)');
 
+        $checkout->waitForShippingMethod();
+        $this->takeScreenshot('Checkout - Shipping Method');
+        $this->getHelperCommon()->getElement('id=s_method_freeshipping_freeshipping')->click();
+        $this->takeScreenshot('Checkout - Shipping Method (before submit');
+        $checkout->finishStep('shippingMethod');
+        $this->takeScreenshot('Checkout - Shipping Method (while submit');
 
+        $checkout->waitForPaymentMethod();
+        $this->takeScreenshot('Checkout - Payment Method');
+        $this->getHelperAssert()->assertElementContainsText('css=#checkout-payment-method-load label', 'Cash On Delivery');
+        $this->takeScreenshot('Checkout - Payment Method (before submit)');
+        $checkout->finishStep('paymentMethod');
+        $this->takeScreenshot('Checkout - Payment Method (while submit)');
 
+        $checkout->waitForReview();
+        $this->takeScreenshot('Checkout - Review');
+        $checkout->submitForm();
+        $this->takeScreenshot('Checkout - Review (while submit)');
+
+        $this->getHelperAssert()->assertElementContainsText('css=.page-title h1', 'YOUR ORDER HAS BEEN RECEIVED.');
+        $this->takeScreenshot('Order confirmation page');
     }
 
 }
