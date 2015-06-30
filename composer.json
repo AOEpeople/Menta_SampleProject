@@ -1,10 +1,52 @@
 {
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "aoepeople/menta",
+                "type": "project",
+                "version": "dev-develop",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/AOEpeople/Menta.git",
+                    "reference": "develop"
+                },
+                "autoload": {
+                    "psr-0": {
+                        "Menta": "lib/"
+                    }
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "aoepeople/menta_magentocomponents",
+                "type": "project",
+                "version": "dev-develop",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/AOEpeople/Menta_MagentoComponents",
+                    "reference": "mage_1.9"
+                },
+                "autoload": {
+                    "psr-0": {
+                        "MagentoComponents": "lib/"
+                    }
+                }
+            }
+        }
+    ],
+
     "minimum-stability": "dev",
     "require": {
-        "aoepeople/menta": "*",
-        "aoepeople/menta_magentocomponents": "*",
+        "phpunit/phpunit": "3.7.*",
+        "instaclick/php-webdriver": "dev-master",
+        "aoepeople/menta": "dev-develop",
+        "aoepeople/menta_magentocomponents": "dev-develop",
         "aoepeople/menta_generalcomponents": "*"
     },
+
     "config": {
         "bin-dir": "bin"
     }

@@ -3,6 +3,8 @@
         <!--  Base URL (without trailing slash) -->
         <var name="testing.maindomain" value="http://demo.magentocommerce.com"/>
 
+        <var name="testing.selenium.browser" value=""/>
+
         <!-- Add your selenium server url here -->
         <!-- use: http://username:accesskey@ondemand.saucelabs.com:80/wd/hub for Sauce Labs -->
         <var name="testing.selenium.seleniumServerUrl" value=""/>
